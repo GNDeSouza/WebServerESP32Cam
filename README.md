@@ -5,11 +5,20 @@ This is a program based on another code for a webcam server,
 but with one additional functionality: the ESPCam can boot in
 a WiFi-AP open mode (no password), so one can login into the ESP
 for initially setting up the SSID/Password/IP to their needs. 
-Once SSID/Password/IP are entered, the ESP reboots in webcam
-server mode. If at any time one needs to reset the configuration,
-they can simply press a button for about 10 secs and the config
-is forgotten (erase from EEPROM), and booting the ESP back in
-WiFi-AP mode. 
+
+In order to configure the ESPCam, all one has to do is to go
+to their WiFi settings and connect it to the WiFi-AP that will
+show in their device's WiFi device list.  Then, open a browser
+and point it to http://192.168.1.1 and follow the instructions.
+
+Once SSID/Password/IP are entered, the ESP reboots in normal,
+webcam server mode. If at any time one needs to reset the current
+configuration, they can simply press the button defined in the
+code as one of the GPIOs for about 10 secs. The white LED inside
+the ESP32 will blink a few times (8) and then go steady. At this
+point the button should be released, the current config will be
+orgotten (erase from EEPROM), and the device will start booting
+back in WiFi-AP mode. 
 
 This is a very familiar/standard feature in most IoT and many
 other devices nowadays (Alexa, light switches, door bells, etc)
